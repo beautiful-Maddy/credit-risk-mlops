@@ -1,18 +1,15 @@
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import classification_report, confusion_matrix, roc_auc_score
 
 from src.features.preprocessing import preprocess
 
 
-def train_random_forest():
+def train_decision_tree():
 
     X_train, X_test, y_train, y_test = preprocess()
 
-    model = RandomForestClassifier(
-        n_estimators=100,
-        random_state=42
-    )
+    model = DecisionTreeClassifier()
 
     model.fit(X_train, y_train)
 
@@ -29,4 +26,4 @@ def train_random_forest():
 
 
 if __name__ == "__main__":
-    train_random_forest()
+    train_decision_tree()
