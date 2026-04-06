@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/maddy/Downloads/DU_Dtata analytics/ML_OPS/credit-risk-mlops/mlruns/871993471133823061/f33eab13093149df8d03b56f947efaec/artifacts
+end_time: 1775484110947
+entry_point_name: ''
+experiment_id: '871993471133823061'
+lifecycle_stage: active
+run_id: f33eab13093149df8d03b56f947efaec
+run_name: random_forest_run_0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1775484107838
+status: 3
+tags: []
+user_id: maddy

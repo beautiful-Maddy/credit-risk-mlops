@@ -1,0 +1,10 @@
+artifact_location: file:///Users/maddy/Downloads/DU_Dtata analytics/ML_OPS/credit-risk-mlops/mlruns/871993471133823061/models/m-48ba40d796d9405bbede4fb519ff744d/artifacts
+creation_timestamp: 1775484107850
+experiment_id: '871993471133823061'
+last_updated_timestamp: 1775484110456
+model_id: m-48ba40d796d9405bbede4fb519ff744d
+model_type: null
+name: model
+source_run_id: f33eab13093149df8d03b56f947efaec
+status: 2
+status_message: null

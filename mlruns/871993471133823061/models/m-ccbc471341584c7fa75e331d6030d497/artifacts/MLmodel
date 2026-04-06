@@ -1,0 +1,23 @@
+artifact_path: file:///Users/maddy/Downloads/DU_Dtata analytics/ML_OPS/credit-risk-mlops/mlruns/871993471133823061/models/m-ccbc471341584c7fa75e331d6030d497/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.7
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.5.1
+    skops_trusted_types: null
+mlflow_version: 3.10.1
+model_id: m-ccbc471341584c7fa75e331d6030d497
+model_size_bytes: 17202864
+model_uuid: m-ccbc471341584c7fa75e331d6030d497
+prompts: null
+run_id: 28fd6e69f5704a16af37b279eea24854
+utc_time_created: '2026-04-06 13:33:50.414182'

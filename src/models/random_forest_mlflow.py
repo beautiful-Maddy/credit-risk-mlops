@@ -15,7 +15,7 @@ from sklearn.metrics import (
 from src.features.preprocessing import preprocess
 
 
-mlflow.set_tracking_uri("file:./mlruns")
+mlflow.set_tracking_uri("sqlite:///mlflow.db")
 mlflow.set_experiment("Credit Risk - Random Forest")
 
 
@@ -24,9 +24,7 @@ def train():
 
     params = {}
 
-    model = RandomForestClassifier(
-    n_estimators=200,
-    class_weight="balanced")
+    model = RandomForestClassifier()
     model.fit(X_train, y_train)
 
     y_pred = model.predict(X_test)
@@ -36,11 +34,10 @@ def train():
     recall = recall_score(y_test, y_pred)
     f1 = f1_score(y_test, y_pred)
 
-    with mlflow.start_run():
+    with mlflow.start_run(run_name="random_forest_run_0"):
         mlflow.log_params(params)
         mlflow.log_param("model", "Random Forest")
 
-        mlflow.log_metric("accuracy", accuracy)
         mlflow.log_metric("precision", precision)
         mlflow.log_metric("recall", recall)
         mlflow.log_metric("f1_score", f1)
