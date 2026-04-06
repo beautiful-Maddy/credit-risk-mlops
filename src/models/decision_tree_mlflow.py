@@ -22,7 +22,12 @@ mlflow.set_experiment("Credit Risk - Decision Tree")
 def train():
     X_train, X_test, y_train, y_test = preprocess()
 
-    params = {}
+    params = {
+        "class_weight": "balanced",
+        "max_depth": 5,
+        "min_samples_split": 10,
+        "min_samples_leaf": 5
+        }
 
     model = DecisionTreeClassifier(**params)
     model.fit(X_train, y_train)
@@ -34,7 +39,7 @@ def train():
     recall = recall_score(y_test, y_pred)
     f1 = f1_score(y_test, y_pred)
 
-    with mlflow.start_run(run_name="decision_tree_run_0"):
+    with mlflow.start_run(run_name="decision_tree_run_1"):
         mlflow.log_params(params)
         mlflow.log_param("model", "Decision Tree")
 
