@@ -1,0 +1,7 @@
+artifact_location: file:///Users/maddy/Downloads/DU_Dtata analytics/ML_OPS/credit-risk-mlops/mlruns/871993471133823061
+creation_time: 1775470714492
+experiment_id: '871993471133823061'
+last_update_time: 1775470714492
+lifecycle_stage: active
+name: Credit Risk - Random Forest
+workspace: default

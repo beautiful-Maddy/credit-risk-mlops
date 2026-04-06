@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/maddy/Downloads/DU_Dtata analytics/ML_OPS/credit-risk-mlops/mlruns/675061863319209271/4e5988a73eff4231a5ee49b42faa7045/artifacts
+end_time: 1775470679486
+entry_point_name: ''
+experiment_id: '675061863319209271'
+lifecycle_stage: active
+run_id: 4e5988a73eff4231a5ee49b42faa7045
+run_name: clumsy-mare-571
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1775470676170
+status: 3
+tags: []
+user_id: maddy

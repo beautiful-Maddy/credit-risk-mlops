@@ -1,0 +1,14 @@
+artifact_uri: file:///Users/maddy/Downloads/DU_Dtata analytics/ML_OPS/credit-risk-mlops/mlruns/871993471133823061/1bb9048d1401451ebcd709acce4eb0ec/artifacts
+end_time: 1775470718247
+entry_point_name: ''
+experiment_id: '871993471133823061'
+lifecycle_stage: active
+run_id: 1bb9048d1401451ebcd709acce4eb0ec
+run_name: righteous-snipe-364
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1775470715806
+status: 3
+tags: []
+user_id: maddy
