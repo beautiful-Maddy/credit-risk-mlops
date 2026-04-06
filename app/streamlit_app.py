@@ -106,13 +106,14 @@ model = joblib.load("models/logistic_model.pkl")
 scaler, feature_columns = fit_scaler_and_columns()
 
 st.markdown('<div class="main-title">Credit Risk Prediction ✨</div>', unsafe_allow_html=True)
-st.markdown(
-    '<div class="subtitle">Estimation élégante du risque de défaut client</div>',
-    unsafe_allow_html=True
-)
+
 
 st.markdown('<div class="card">', unsafe_allow_html=True)
 st.subheader("Client profile")
+
+st.sidebar.markdown("### Model Info")
+st.sidebar.write("Model: Logistic Regression")
+st.sidebar.write("Recall: 0.67")
 
 col1, col2 = st.columns(2)
 
