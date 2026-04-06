@@ -24,7 +24,7 @@ def train():
 
     params = {}
 
-    model = DecisionTreeClassifier(class_weight="balanced")
+    model = DecisionTreeClassifier(**params)
     model.fit(X_train, y_train)
 
     y_pred = model.predict(X_test)
@@ -34,11 +34,10 @@ def train():
     recall = recall_score(y_test, y_pred)
     f1 = f1_score(y_test, y_pred)
 
-    with mlflow.start_run():
+    with mlflow.start_run(run_name="decision_tree_run_0"):
         mlflow.log_params(params)
         mlflow.log_param("model", "Decision Tree")
 
-        mlflow.log_metric("accuracy", accuracy)
         mlflow.log_metric("precision", precision)
         mlflow.log_metric("recall", recall)
         mlflow.log_metric("f1_score", f1)
