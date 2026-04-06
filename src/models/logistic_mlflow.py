@@ -39,7 +39,7 @@ def train():
     f1 = f1_score(y_test, y_pred)
     precision = precision_score(y_test, y_pred)
 
-    with mlflow.start_run(run_name="logistic_balanced_run_1"):
+    with mlflow.start_run(run_name="logistic_balanced_c01"):
         mlflow.log_params(params)
         mlflow.log_param("model", "Logistic Regression")
 
