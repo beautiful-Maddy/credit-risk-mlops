@@ -5,11 +5,9 @@ import matplotlib.pyplot as plt
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import (
-    accuracy_score,
     precision_score,
     recall_score,
     f1_score,
-    confusion_matrix,
     ConfusionMatrixDisplay,
     RocCurveDisplay,
 )
@@ -26,13 +24,14 @@ def train():
 
     params = {}
 
-    model = RandomForestClassifier(**params)
+    model = RandomForestClassifier(
+    n_estimators=200,
+    class_weight="balanced")
     model.fit(X_train, y_train)
 
     y_pred = model.predict(X_test)
     y_proba = model.predict_proba(X_test)[:, 1]
 
-    accuracy = accuracy_score(y_test, y_pred)
     precision = precision_score(y_test, y_pred)
     recall = recall_score(y_test, y_pred)
     f1 = f1_score(y_test, y_pred)

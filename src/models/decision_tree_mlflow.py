@@ -5,11 +5,9 @@ import matplotlib.pyplot as plt
 
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import (
-    accuracy_score,
     precision_score,
     recall_score,
     f1_score,
-    confusion_matrix,
     ConfusionMatrixDisplay,
     RocCurveDisplay,
 )
@@ -17,7 +15,7 @@ from sklearn.metrics import (
 from src.features.preprocessing import preprocess
 
 
-mlflow.set_tracking_uri("file:./mlruns")
+mlflow.set_tracking_uri("sqlite:///mlflow.db")
 mlflow.set_experiment("Credit Risk - Decision Tree")
 
 
@@ -26,13 +24,12 @@ def train():
 
     params = {}
 
-    model = DecisionTreeClassifier(**params)
+    model = DecisionTreeClassifier(class_weight="balanced")
     model.fit(X_train, y_train)
 
     y_pred = model.predict(X_test)
     y_proba = model.predict_proba(X_test)[:, 1]
 
-    accuracy = accuracy_score(y_test, y_pred)
     precision = precision_score(y_test, y_pred)
     recall = recall_score(y_test, y_pred)
     f1 = f1_score(y_test, y_pred)

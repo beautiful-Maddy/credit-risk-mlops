@@ -5,11 +5,9 @@ import matplotlib.pyplot as plt
 
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
-    accuracy_score,
     precision_score,
     recall_score,
     f1_score,
-    confusion_matrix,
     ConfusionMatrixDisplay,
     RocCurveDisplay,
 )
@@ -17,7 +15,7 @@ from sklearn.metrics import (
 from src.features.preprocessing import preprocess
 
 
-mlflow.set_tracking_uri("file:./mlruns")
+mlflow.set_tracking_uri("sqlite:///mlflow.db")
 mlflow.set_experiment("Credit Risk - Logistic Regression")
 
 
@@ -25,7 +23,9 @@ def train():
     X_train, X_test, y_train, y_test = preprocess()
 
     params = {
-        "max_iter": 1000,
+    "max_iter": 1000,
+    "class_weight": "balanced",
+    "C": 0.1
     }
 
     model = LogisticRegression(**params)
@@ -34,16 +34,14 @@ def train():
     y_pred = model.predict(X_test)
     y_proba = model.predict_proba(X_test)[:, 1]
 
-    accuracy = accuracy_score(y_test, y_pred)
     recall = recall_score(y_test, y_pred)
     f1 = f1_score(y_test, y_pred)
     precision = precision_score(y_test, y_pred)
 
-    with mlflow.start_run():
+    with mlflow.start_run(run_name="logistic_balanced_c01"):
         mlflow.log_params(params)
         mlflow.log_param("model", "Logistic Regression")
 
-        mlflow.log_metric("accuracy", accuracy)
         mlflow.log_metric("precision", precision)
         mlflow.log_metric("recall", recall)
         mlflow.log_metric("f1_score", f1)
