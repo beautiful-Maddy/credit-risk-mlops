@@ -24,8 +24,7 @@ def train():
 
     params = {
     "max_iter": 1000,
-    "class_weight": "balanced",
-    "C": 0.1
+    "class_weight": "balanced"
     }
 
     model = LogisticRegression(**params)
@@ -38,7 +37,7 @@ def train():
     f1 = f1_score(y_test, y_pred)
     precision = precision_score(y_test, y_pred)
 
-    with mlflow.start_run(run_name="logistic_balanced_c01"):
+    with mlflow.start_run(run_name="logistic_balanced_run_2"):
         mlflow.log_params(params)
         mlflow.log_param("model", "Logistic Regression")
 
