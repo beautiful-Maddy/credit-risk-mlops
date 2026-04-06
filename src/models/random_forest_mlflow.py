@@ -22,7 +22,14 @@ mlflow.set_experiment("Credit Risk - Random Forest")
 def train():
     X_train, X_test, y_train, y_test = preprocess()
 
-    params = {}
+    params = {
+    "n_estimators": 200,
+    "max_depth": 6,
+    "min_samples_split": 10,
+    "min_samples_leaf": 5,
+    "class_weight": "balanced",
+    "random_state": 42
+    }
 
     model = RandomForestClassifier()
     model.fit(X_train, y_train)
@@ -34,7 +41,7 @@ def train():
     recall = recall_score(y_test, y_pred)
     f1 = f1_score(y_test, y_pred)
 
-    with mlflow.start_run(run_name="random_forest_run_0"):
+    with mlflow.start_run(run_name="random_forest_run_1_balanced"):
         mlflow.log_params(params)
         mlflow.log_param("model", "Random Forest")
 
