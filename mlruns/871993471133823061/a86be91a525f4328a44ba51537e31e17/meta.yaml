@@ -1,8 +1,9 @@
 artifact_uri: file:///Users/maddy/Downloads/DU_Dtata analytics/ML_OPS/credit-risk-mlops/mlruns/871993471133823061/a86be91a525f4328a44ba51537e31e17/artifacts
+deleted_time: 1775668932332
 end_time: 1775482335719
 entry_point_name: ''
 experiment_id: '871993471133823061'
-lifecycle_stage: active
+lifecycle_stage: deleted
 run_id: a86be91a525f4328a44ba51537e31e17
 run_name: rebellious-trout-831
 source_name: ''
