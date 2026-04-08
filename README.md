@@ -46,3 +46,9 @@ Interface permettant :
 Lancer le projet:
 pip install -r requirements.txt
 streamlit run app/streamlit_app.py
+
+## Deployment
+
+The application is deployed on AWS ECS and is publicly accessible at:
+
+http://13.38.66.245:8501/
